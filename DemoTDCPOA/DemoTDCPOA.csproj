@@ -11,5 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="LiteDB" Version="4.1.4" />
   </ItemGroup>
 </Project>

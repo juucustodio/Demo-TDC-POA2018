@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DemoTDCPOA" x:Class="DemoTDCPOA.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-               HorizontalOptions="Center" 
-               VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:DemoTDCPOA" 
+             x:Class="DemoTDCPOA.MainPage" Title="TDC POA 2018">
+    <ContentPage.Content>        
+            <StackLayout Padding="10">
+                    <Entry x:Name="EntryName" Placeholder="Name"/>
+                    <Button Text="Insert" Clicked="Insert" BackgroundColor="Blue" TextColor="White"/>
+                    <Button Text="Get" Clicked="Get" BackgroundColor="Blue" TextColor="White"/>
+
+                    <ListView x:Name="ListPessoas" ItemSelected="List_Selected" Footer=" ">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <Label Text="{Binding Id}"></Label>
+                                        <Label Text="{Binding Name}"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+            </StackLayout>
+       </ContentPage.Content>
 </ContentPage>
